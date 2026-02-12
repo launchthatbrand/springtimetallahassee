@@ -118,7 +118,7 @@ export default function TransportationDayPage() {
 
             {/* Form */}
             <div className="relative z-10 w-full md:mx-auto p-8 pt-6 md:p-12 md:pt-8 text-left flex flex-col justify-center">
-              <PledgeForm />
+              <PledgeForm successRedirectPath="/pledge/success" />
             </div>
 
           </FadeIn>

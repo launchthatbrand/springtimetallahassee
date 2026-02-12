@@ -5,6 +5,7 @@ import * as z from "zod";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,8 +17,13 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-export function PledgeForm() {
+type PledgeFormProps = {
+  successRedirectPath?: string;
+};
+
+export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const router = useRouter();
 
   const {
     register,
@@ -36,6 +42,11 @@ export function PledgeForm() {
     console.log("Form Submitted:", values);
     // Here you would typically send data to an API
     // await fetch('/api/pledge', { method: 'POST', body: JSON.stringify(values) })
+
+    if (successRedirectPath) {
+      router.push(successRedirectPath);
+      return;
+    }
 
     setIsSubmitted(true);
   };
