@@ -49,8 +49,8 @@ export default function TransportationDayPage() {
 
           {/* Middle Content: White Bar with Logos */}
           <div className="bg-white ring-1 ring-blue-500 py-6 w-full mx-auto shadow-2xl z-20">
-            <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
-              <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center">
+            <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8 max-w-7xl">
+              <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center cursor-pointer">
                 <Image
                   src="/fdot_logo_color.png"
                   alt="FDOT Logo"
@@ -59,24 +59,26 @@ export default function TransportationDayPage() {
                   className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
-              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center md:justify-self-center">
+              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center md:justify-self-center cursor-pointer">
                 <Image
-                  src="/tz_logo_black.png"
+                  src="/FDOT Target Zero logo.png"
                   alt="Target Zero Logo"
                   width={240}
                   height={96}
                   className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
-              <div className="flex w-full justify-center">
-                <Image
-                  src="/america250fullcolorlarge.png"
-                  alt="America 250 Florida Logo"
-                  width={240}
-                  height={96}
-                  className="h-auto w-8 object-contain sm:w-10 md:w-14"
-                />
-              </div>
+              <Link href="https://www.america250florida.com" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center cursor-pointer">
+                <div className="flex w-full justify-center">
+                  <Image
+                    src="/america250fullcolorlarge.png"
+                    alt="America 250 Florida Logo"
+                    width={240}
+                    height={96}
+                    className="h-auto w-8 object-contain sm:w-10 md:w-14"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -159,32 +161,36 @@ export default function TransportationDayPage() {
                 and travel information, please visit <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="font-bold underline">www.fdot.gov</Link>
               </p>
 
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/Web%20Assets/FDOT%20Logo_K.png"
-                    alt="FDOT Logo"
-                    width={150}
-                    height={60}
-                    className="h-10 md:h-12 w-auto object-contain"
-                  />
-                </Link>
-                <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/tz_logo_black.png"
-                    alt="Target Zero Logo"
-                    width={150}
-                    height={60}
-                    className="h-10 md:h-12 w-auto object-contain"
-                  />
-                </Link>
-                <Image
-                  src="/america250fullcolorlarge.png"
-                  alt="America 250 Florida Logo"
-                  width={150}
-                  height={60}
-                  className="h-10 md:h-12 w-auto object-contain"
-                />
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                    <Image
+                      src="/fdot_logo_color.png"
+                      alt="FDOT Logo"
+                      width={150}
+                      height={60}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
+                  </Link>
+                  <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                    <Image
+                      src="/FDOT Target Zero logo.png"
+                      alt="Target Zero Logo"
+                      width={150}
+                      height={60}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
+                  </Link>
+                  <Link href="https://www.america250florida.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                    <Image
+                      src="/america250fullcolorlarge.png"
+                      alt="America 250 Florida Logo"
+                      width={150}
+                      height={60}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           </FadeIn>
