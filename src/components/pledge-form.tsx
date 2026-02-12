@@ -87,15 +87,15 @@ export function PledgeForm() {
     <form
       className="flex flex-col gap-6 transition-all duration-300"
       onSubmit={handleSubmit(handleSubmitPledge)}
-    >      {/* Blue Overlay */}
-      <div className="absolute inset-0 bg-[#132f57]/90 rounded-xl z-5"></div>
+    >
+
       <div className="text-xl md:text-2xl font-bold text-white z-10 leading-relaxed">
-        <div className="flex flex-wrap items-baseline gap-x-2 relative">
-          <span>I</span>
-          <div className="relative group">
+        <p className="relative">
+          <span>I </span>
+          <span className="relative inline-block align-baseline mx-2">
             <Input
               {...register("name")}
-              className={`h-8 min-w-48 w-full border-b-2 border-x-0 border-t-0 rounded-none bg-white px-2 py-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
+              className={`h-9 w-52 sm:w-64 md:w-72 border-2 rounded-md bg-white px-3 py-1 text-[#1c3e6f] placeholder:text-slate-500 shadow-sm focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
                 }`}
               placeholder="First and Last Name"
               aria-label="Name"
@@ -106,13 +106,12 @@ export function PledgeForm() {
                 * {errors.name.message}
               </span>
             )}
-          </div>
-          <span>pledge to</span>
-        </div>
-        <span className="mt-1 block">practice safer behaviors every time I travel by:</span>
+          </span>
+          <span>pledge to practice safer behaviors every time I travel by:</span>
+        </p>
       </div>
 
-      <ul className="space-y-3 pl-4 z-10">
+      <ul className="space-y-3 pl-4 z-10 ">
         {[
           "Staying alert and focused on the road",
           "Following traffic laws and posted speed limits",
@@ -122,17 +121,17 @@ export function PledgeForm() {
         ].map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 text-lg font-bold text-white"
+            className="flex items-start gap-3 font-bold text-2xl text-white"
           >
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#1c3e6f]" />
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#ffffff]" />
             <span>{item}</span>
           </li>
         ))}
       </ul>
 
-      <div className="flex z-10 flex-col sm:flex-row items-center gap-4 pt-6 sm:ml-auto w-full sm:w-auto">
-        <div className="flex flex-col items-end gap-1 w-full sm:w-auto">
-          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+      <div className="flex z-10 w-full flex-col  gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex w-full flex-col items-start gap-1 sm:w-auto">
+          <div className="flex w-full items-center justify-start gap-2 sm:w-auto ml-0 md:ml-10">
             <label
               htmlFor="zip"
               className="text-lg font-bold text-white whitespace-nowrap"
@@ -155,7 +154,7 @@ export function PledgeForm() {
             </div>
           </div>
           {errors.zipCode && (
-            <span className="text-sm text-red-600 font-bold text-right w-full animate-in slide-in-from-right-2 fade-in">
+            <span className="text-sm text-red-600 font-bold text-left w-full animate-in slide-in-from-right-2 fade-in">
               {errors.zipCode.message}
             </span>
           )}
@@ -163,7 +162,8 @@ export function PledgeForm() {
 
         <Button
           type="submit"
-          className="h-10 px-8 text-lg font-black uppercase tracking-widest bg-[#b91c1c] hover:bg-[#991b1b] text-white rounded-full shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
+          size="lg"
+          className="h-10 px-8 mr-0 md:mr-10 text-3xl p-8 font-black uppercase tracking-widest bg-[#b91c1c] hover:bg-[#991b1b] text-white rounded-full shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
         >
           SUBMIT
         </Button>
