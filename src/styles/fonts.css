@@ -1,0 +1,49 @@
+/* Rift font faces
+   Put the font files in `public/fonts/` with these names:
+   - Rift-Light.otf (300)
+   - Rift-Regular.otf (400)
+   - Rift-Medium.otf (500)
+   - Rift-SemiBold.otf (600)
+   - Rift-ExtraBold.otf (800)
+*/
+
+@font-face {
+  font-family: "Rift";
+  src: url("/fonts/Rift-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rift";
+  src: url("/fonts/Rift-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rift";
+  src: url("/fonts/Rift-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rift";
+  src: url("/fonts/Rift-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rift";
+  src: url("/fonts/Rift-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
