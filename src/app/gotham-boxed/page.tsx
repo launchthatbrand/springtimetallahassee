@@ -51,7 +51,7 @@ export default function TransportationDayGothamBoxedPage() {
               </div>
 
               {/* Middle Content: White Bar with Logos */}
-              <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 md:rounded-xl">
+              <div className="bg-white py-6 w-full mx-auto shadow-2xl z-20">
                 <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
                   <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center">
                     <Image
