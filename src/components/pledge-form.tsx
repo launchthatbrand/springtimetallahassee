@@ -95,7 +95,7 @@ export function PledgeForm() {
           <div className="relative group">
             <Input
               {...register("name")}
-              className={`h-8 w-64 border-b-2 border-x-0 border-t-0 rounded-none bg-white px-2 py-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
+              className={`h-8 min-w-48 w-full border-b-2 border-x-0 border-t-0 rounded-none bg-white px-2 py-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
                 }`}
               placeholder="First and Last Name"
               aria-label="Name"

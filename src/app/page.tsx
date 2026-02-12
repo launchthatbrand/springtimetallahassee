@@ -103,7 +103,7 @@ export default function TransportationDayPage() {
         <div className="container mx-auto px-4 max-w-5xl text-center space-y-8">
           <FadeIn direction="up" delayMs={100}>
             {/* Pledge Card */}
-            <div className="relative rounded-3xl shadow-xl overflow-hidden min-h-125">
+            <div className="relative rounded-3xl shadow-xl overflow-hidden min-h-125 p-10 flex flex-col gap-5">
               <Image
                 src="/honoring-laborers-on-labor-day-engage-your-audien-2026-01-06-00-35-15-utc copy.jpg"
                 alt="Labor Day background"
@@ -112,7 +112,7 @@ export default function TransportationDayPage() {
               />
               {/* <div className="absolute inset-0 bg-white/80" /> */}
 
-              <div className="relative z-10 pt-8 px-4 md:pt-10 md:px-6 text-center">
+              <div className="relative z-10 text-center">
                 <h2 className="text-center text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
                   Take the Safety Pledge!
                 </h2>
