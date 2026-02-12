@@ -124,7 +124,7 @@ export default function TransportationDaySlidesPage() {
 
               <div className="mx-auto mt-7 w-full max-w-md">
                 <Button asChild className="h-14 w-full rounded-full bg-white text-lg font-black uppercase tracking-wide text-[#10345e] hover:bg-white/90">
-                  <Link href="#checklist" target="_blank" rel="noopener noreferrer">Take the Safety Pledge!</Link>
+                  <Link href="#checklist" rel="noopener noreferrer">Take the Safety Pledge!</Link>
                 </Button>
               </div>
               <ChevronDown className="mx-auto mt-6 h-6 w-6 animate-bounce text-white/80" />
@@ -209,7 +209,7 @@ export default function TransportationDaySlidesPage() {
           </div>
 
           <Button asChild className="h-11 rounded-full bg-[#b91c1c] text-white hover:bg-[#991b1b]">
-            <Link href="#step-two" target="_blank" rel="noopener noreferrer">Continue to Step 2</Link>
+            <Link href="#step-two" rel="noopener noreferrer">Continue to Step 2</Link>
           </Button>
         </FadeIn>
       </section>
