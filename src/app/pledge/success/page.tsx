@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FadeIn } from "~/app/_components/fade-in";
 
 export default function SuccessPage() {
   return (
@@ -21,7 +22,12 @@ export default function SuccessPage() {
         <div className="absolute inset-0 bg-[#0d3f6f]/85" />
       </div>
 
-      <section className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white">
+      <FadeIn
+        as="section"
+        direction="up"
+        durationMs={700}
+        className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white"
+      >
         <div className="max-w-6xl space-y-6">
           <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="mx-auto h-14 w-auto object-contain" />
           <h1 className="text-5xl md:text-7xl font-black uppercase font-oswald leading-tight drop-shadow-2xl">
@@ -49,7 +55,7 @@ export default function SuccessPage() {
             more on how you can be apart of the Target Zero mission.
           </p>
         </div>
-      </section>
+      </FadeIn>
     </main>
   );
 }

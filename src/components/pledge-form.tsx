@@ -154,7 +154,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
                 id="zip"
                 type="text"
                 {...register("zipCode")}
-                className={`h-10 w-32 rounded-sm border-none bg-white px-3 text-white shadow-inner text-center font-bold tracking-widest ${errors.zipCode ? "ring-2 ring-red-500 bg-red-50" : ""
+                className={`h-10 w-32 rounded-sm border-none bg-white px-3 text-[#1c3e6f] placeholder:text-slate-500 shadow-inner text-center font-bold tracking-widest ${errors.zipCode ? "ring-2 ring-red-500 bg-red-50" : ""
                   }`}
                 pattern="[0-9]*"
                 inputMode="numeric"
