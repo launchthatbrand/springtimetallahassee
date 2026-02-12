@@ -2,19 +2,14 @@ import Link from "next/link";
 
 const versions = [
   {
-    name: "Default",
+    name: "Main",
     route: "/",
-    description: "Primary page using the default project font stack.",
+    description: "Primary Target Zero page (Gotham styling).",
   },
   {
-    name: "Gotham",
-    route: "/gotham",
-    description: "Same layout as default, rendered with Gotham styling.",
-  },
-  {
-    name: "Gotham Boxed",
-    route: "/gotham-boxed",
-    description: "Gotham layout constrained to max-w-7xl with white side bars.",
+    name: "Boxed",
+    route: "/boxed",
+    description: "Main layout constrained to max-w-7xl with white side bars.",
   },
   {
     name: "Slides",

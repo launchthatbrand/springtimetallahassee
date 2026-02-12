@@ -1,11 +1,13 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useState } from "react";
+
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required" }),
@@ -47,23 +49,36 @@ export function PledgeForm() {
           </svg>
         </div>
         <div className="space-y-2 animate-in slide-in-from-bottom-2 fade-in duration-700">
-          <h3 className="text-3xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
-            Thank you for pledging to stay safe
+          <h3 className="text-3xl font-black text-white uppercase font-oswald tracking-wide">
+            Thank you for your commitment!
           </h3>
-          <p className="text-xl text-[#1c3e6f] font-medium max-w-md mx-auto">
-            Your commitment helps make Florida roads safer for everyone.
+          <p className="text-xl text-white font-medium max-w-md mx-auto">
+            Together we are making Florida&apos;s roadways safer for everyone.
+          </p>
+          <p className="text-base text-white font-medium max-w-lg mx-auto">
+            Signing the safety pledge is just the first step. Go to{" "}
+            <Link
+              href="https://www.fdot.gov/agencyresources/target-zero"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              https://www.fdot.gov/agencyresources/target-zero
+            </Link>{" "}
+            to learn more on how you can be apart of the Target Zero mission.
           </p>
         </div>
-        <Button 
+        <Button
           onClick={() => {
             setIsSubmitted(false);
             reset();
-          }} 
+          }}
           variant="outline"
-          className="mt-4 border-2 border-[#1c3e6f] text-[#1c3e6f] font-bold hover:bg-[#1c3e6f] hover:text-white"
+          className="mt-4 border-2 border-[#1c3e6f] text-white font-bold hover:bg-[#1c3e6f] hover:text-white"
         >
           Submit Another Pledge
         </Button>
+
       </div>
     );
   }
@@ -72,16 +87,16 @@ export function PledgeForm() {
     <form
       className="flex flex-col gap-6 transition-all duration-300"
       onSubmit={handleSubmit(handleSubmitPledge)}
-    >
-      <div className="text-xl md:text-2xl font-bold text-[#1c3e6f] leading-relaxed">
+    >      {/* Blue Overlay */}
+      <div className="absolute inset-0 bg-[#132f57]/90 rounded-xl z-5"></div>
+      <div className="text-xl md:text-2xl font-bold text-white z-10 leading-relaxed">
         <div className="flex flex-wrap items-baseline gap-x-2 relative">
           <span>I</span>
           <div className="relative group">
             <Input
               {...register("name")}
-              className={`h-8 w-64 border-b-2 border-x-0 border-t-0 rounded-none bg-white px-2 py-0 text-[#1c3e6f] placeholder:text-slate-400 focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${
-                errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
-              }`}
+              className={`h-8 w-64 border-b-2 border-x-0 border-t-0 rounded-none bg-white px-2 py-0 text-white placeholder:text-slate-400 focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
+                }`}
               placeholder="First and Last Name"
               aria-label="Name"
               aria-invalid={!!errors.name}
@@ -97,7 +112,7 @@ export function PledgeForm() {
         <span className="mt-1 block">practice safer behaviors every time I travel by:</span>
       </div>
 
-      <ul className="space-y-3 pl-4">
+      <ul className="space-y-3 pl-4 z-10">
         {[
           "Staying alert and focused on the road",
           "Following traffic laws and posted speed limits",
@@ -107,7 +122,7 @@ export function PledgeForm() {
         ].map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 text-lg font-bold text-[#1c3e6f]"
+            className="flex items-start gap-3 text-lg font-bold text-white"
           >
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#1c3e6f]" />
             <span>{item}</span>
@@ -115,12 +130,12 @@ export function PledgeForm() {
         ))}
       </ul>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4 pt-6 sm:ml-auto w-full sm:w-auto">
+      <div className="flex z-10 flex-col sm:flex-row items-center gap-4 pt-6 sm:ml-auto w-full sm:w-auto">
         <div className="flex flex-col items-end gap-1 w-full sm:w-auto">
           <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
             <label
               htmlFor="zip"
-              className="text-lg font-bold text-[#1c3e6f] whitespace-nowrap"
+              className="text-lg font-bold text-white whitespace-nowrap"
             >
               Zip Code:
             </label>
@@ -129,9 +144,8 @@ export function PledgeForm() {
                 id="zip"
                 type="text"
                 {...register("zipCode")}
-                className={`h-10 w-32 rounded-sm border-none bg-white px-3 text-[#1c3e6f] shadow-inner text-center font-bold tracking-widest ${
-                  errors.zipCode ? "ring-2 ring-red-500 bg-red-50" : ""
-                }`}
+                className={`h-10 w-32 rounded-sm border-none bg-white px-3 text-white shadow-inner text-center font-bold tracking-widest ${errors.zipCode ? "ring-2 ring-red-500 bg-red-50" : ""
+                  }`}
                 pattern="[0-9]*"
                 inputMode="numeric"
                 maxLength={5}
@@ -154,6 +168,7 @@ export function PledgeForm() {
           SUBMIT
         </Button>
       </div>
+
     </form>
   );
 }

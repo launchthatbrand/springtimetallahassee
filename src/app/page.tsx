@@ -19,8 +19,7 @@ const XIcon = ({ className }: { className?: string }) => (
 
 export default function TransportationDayPage() {
   return (
-    <main className="min-h-screen bg-white flex flex-col font-sans gap-2">
-
+    <main className="min-h-screen bg-white flex flex-col font-gotham gap-2">
       <section className="relative w-full bg-[#0b3e66] border-b-4 border-red-500">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -37,20 +36,19 @@ export default function TransportationDayPage() {
 
         {/* Content Container */}
         <div className="relative z-10 flex flex-col">
-
           {/* Top Content: Title */}
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
             <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
             <h1 className="text-3xl md:text-7xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
-              Transportation Day
+              Target Zero
             </h1>
             <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
-              2026
+              TOGETHER
             </div>
           </div>
 
           {/* Middle Content: White Bar with Logos */}
-          <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 rounded-xl">
+          <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 md:rounded-xl">
             <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
               <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center">
                 <Image
@@ -89,25 +87,18 @@ export default function TransportationDayPage() {
                 Thank you for participating in <b>America 250 Transportation Day 2026.</b>
               </p>
               <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-md">
-                We appreciate your commitment to transportation safety and Target Zero,
+                The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero,
                 Florida’s Statewide initiative to reduce the number of transportation-related
                 serious Injuries and fatalities across Florida to ZERO.
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* 4. Pledge Section */}
       <section className="bg-white py-12 md:py-20 border-t-5 border-b-5 border-[#0b3e66] flex flex-col gap-20">
         <div className="container mx-auto px-4 max-w-5xl text-center space-y-8">
-          <FadeIn as="header" direction="up">
-            <h2 className="text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
-              Take the Safety Pledge!
-            </h2>
-          </FadeIn>
-
           <FadeIn direction="up" delayMs={100}>
             {/* Pledge Card */}
             <div className="relative rounded-3xl shadow-xl overflow-hidden min-h-125">
@@ -119,8 +110,14 @@ export default function TransportationDayPage() {
               />
               {/* <div className="absolute inset-0 bg-white/80" /> */}
 
+              <div className="relative z-10 pt-8 px-4 md:pt-10 md:px-6 text-center">
+                <h2 className="text-center text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
+                  Take the Safety Pledge!
+                </h2>
+              </div>
+
               {/* Form */}
-              <div className="relative z-10 w-full md:w-2/3 md:ml-auto p-8 md:p-12 text-left flex flex-col justify-center">
+              <div className="relative z-10 w-full md:w-2/3 md:mx-auto p-8 pt-6 md:p-12 md:pt-8 text-left flex flex-col justify-center">
                 <PledgeForm />
               </div>
             </div>
@@ -131,7 +128,7 @@ export default function TransportationDayPage() {
             <h3 className="text-2xl md:text-4xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
               Follow Us On Socials!
             </h3>
-            <div className="flex justify-center items-center gap-8 md:gap-14">
+            <div className="flex flex-col justify-center items-center gap-8 md:gap-14">
               <Link href="https://instagram.com/myfdot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
                   <Instagram className="h-7 w-7 md:h-8 md:w-8 text-white" />
@@ -207,8 +204,6 @@ export default function TransportationDayPage() {
           {/* Blue Overlay */}
           <div className="absolute inset-0 bg-[#132f57]/90"></div>
         </div>
-
-
       </section>
     </main>
   );

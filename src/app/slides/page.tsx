@@ -91,10 +91,10 @@ export default function TransportationDaySlidesPage() {
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
             <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
             <h1 className="text-3xl md:text-7xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
-              Transportation Day
+              Target Zero
             </h1>
             <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
-              2026
+              Together
             </div>
           </div>
 
@@ -118,7 +118,7 @@ export default function TransportationDaySlidesPage() {
                 Thank you for participating in <b>America 250 Transportation Day 2026.</b>
               </p>
               <p className="text-lg leading-relaxed text-white/90 drop-shadow-md md:text-2xl">
-                We appreciate your commitment to transportation safety and Target Zero, Florida’s statewide initiative to
+                The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero, Florida’s statewide initiative to
                 reduce transportation-related serious injuries and fatalities to ZERO.
               </p>
 
@@ -230,10 +230,22 @@ export default function TransportationDaySlidesPage() {
                 <CheckCircle2 className="h-9 w-9 text-green-600" />
               </div>
               <h4 className="mt-5 text-3xl font-black uppercase text-[#1c3e6f] animate-in slide-in-from-bottom-2 fade-in duration-700">
-                Thank you for pledging to stay safe
+                Thank you for your commitment!
               </h4>
               <p className="mt-3 text-base text-[#365c89]">
-                Your pledge helps strengthen safer travel choices across Florida.
+                Together we are making Florida&apos;s roadways safer for everyone.
+              </p>
+              <p className="mt-3 text-sm text-[#365c89]">
+                Signing the safety pledge is just the first step. Go to{" "}
+                <Link
+                  href="https://www.fdot.gov/agencyresources/target-zero"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  https://www.fdot.gov/agencyresources/target-zero
+                </Link>{" "}
+                to learn more on how you can be apart of the Target Zero mission.
               </p>
               <Button
                 type="button"

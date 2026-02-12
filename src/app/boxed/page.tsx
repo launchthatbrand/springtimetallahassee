@@ -17,7 +17,7 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export default function TransportationDayGothamBoxedPage() {
+export default function TransportationDayBoxedPage() {
   return (
     <main className="min-h-screen bg-slate-100 font-gotham">
       <div className="mx-auto w-full max-w-7xl shadow-2xl">
@@ -38,15 +38,14 @@ export default function TransportationDayGothamBoxedPage() {
 
             {/* Content Container */}
             <div className="relative z-10 flex flex-col">
-
               {/* Top Content: Title */}
               <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
                 <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
                 <h1 className="text-3xl md:text-7xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
-                  Transportation Day
+                  Target Zero
                 </h1>
-                <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
-                  2026
+                <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm uppercase font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
+                  Together
                 </div>
               </div>
 
@@ -90,28 +89,21 @@ export default function TransportationDayGothamBoxedPage() {
                     Thank you for participating in <b>America 250 Transportation Day 2026.</b>
                   </p>
                   <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-md">
-                    We appreciate your commitment to transportation safety and Target Zero,
+                    The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero,
                     Florida’s Statewide initiative to reduce the number of transportation-related
                     serious Injuries and fatalities across Florida to ZERO.
                   </p>
                 </div>
               </div>
-
             </div>
           </section>
 
           {/* 4. Pledge Section */}
           <section className="bg-white py-12 md:py-20 border-t-5 border-b-5 border-[#0b3e66] flex flex-col gap-20">
             <div className="container mx-auto px-4 max-w-5xl text-center space-y-8">
-              <FadeIn as="header" direction="up">
-                <h2 className="text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
-                  Take the Safety Pledge!
-                </h2>
-              </FadeIn>
-
               <FadeIn direction="up" delayMs={100}>
                 {/* Pledge Card */}
-                <div className="relative rounded-3xl shadow-xl overflow-hidden min-h-125">
+                <div className="relative rounded-3xl shadow-xl overflow-hidden min-h-125 flex flex-col p-5 gap-3">
                   <Image
                     src="/honoring-laborers-on-labor-day-engage-your-audien-2026-01-06-00-35-15-utc copy.jpg"
                     alt="Labor Day background"
@@ -120,8 +112,14 @@ export default function TransportationDayGothamBoxedPage() {
                   />
                   {/* <div className="absolute inset-0 bg-white/80" /> */}
 
+                  <div className="relative z-10 pt-8 px-4 md:pt-10 md:px-6 text-center">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
+                      Take the Safety Pledge!
+                    </h2>
+                  </div>
+
                   {/* Form */}
-                  <div className="relative z-10 w-full md:w-2/3 md:ml-auto p-8 md:p-12 text-left flex flex-col justify-center">
+                  <div className="relative z-10 w-full md:w-2/3 md:mx-auto p-8 pt-6 md:p-12 md:pt-8 text-left flex flex-col justify-center">
                     <PledgeForm />
                   </div>
                 </div>
@@ -132,7 +130,7 @@ export default function TransportationDayGothamBoxedPage() {
                 <h3 className="text-2xl md:text-4xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
                   Follow Us On Socials!
                 </h3>
-                <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-14">
+                <div className="flex flex-col justify-center items-center gap-8 md:gap-14">
                   <Link href="https://instagram.com/myfdot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                     <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
                       <Instagram className="h-7 w-7 md:h-8 md:w-8 text-white" />
@@ -208,8 +206,6 @@ export default function TransportationDayGothamBoxedPage() {
               {/* Blue Overlay */}
               <div className="absolute inset-0 bg-[#132f57]/90"></div>
             </div>
-
-
           </section>
         </div>
       </div>
