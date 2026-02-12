@@ -1,11 +1,12 @@
 "use client";
 
-import { CheckCircle2, ChevronDown, Circle, MapPin } from "lucide-react";
+import { CheckCircle2, ChevronDown, Circle, Facebook, Instagram, MapPin } from "lucide-react";
+import { useMemo, useState } from "react";
+
+import { Button } from "~/components/ui/button";
+import { FadeIn } from "~/app/_components/fade-in";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { FadeIn } from "~/app/_components/fade-in";
-import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
 const pledgeActions = [
@@ -15,6 +16,17 @@ const pledgeActions = [
   "I will never drive impaired.",
   "I will encourage friends and family to do the same.",
 ];
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+  </svg>
+);
 
 export default function TransportationDaySlidesPage() {
   const [pledgeName, setPledgeName] = useState("");
@@ -304,6 +316,53 @@ export default function TransportationDaySlidesPage() {
               </Button>
             </form>
           )}
+
+        </FadeIn>
+        <FadeIn className="mx-auto flex w-full max-w-5xl flex-col gap-5">
+          <div className="mt-4 rounded-3xl border border-[#d7e3f3] bg-[#f4f6f8] px-4 py-8 text-center text-[#1c3e6f]">
+            <h3 className="text-3xl font-black uppercase tracking-tight">
+              Follow Us On Socials!
+            </h3>
+            <div className="mt-5 flex flex-wrap justify-center items-center gap-4">
+              <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
+                  <Instagram className="h-5 w-5 text-white" />
+                </span>
+                <span className="text-xl font-black">@my_fdot</span>
+              </Link>
+              <Link href="https://twitter.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <XIcon className="h-8 w-8" />
+                <span className="text-xl font-black">@myfdot</span>
+              </Link>
+              <Link href="https://facebook.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877f2]">
+                  <Facebook className="h-5 w-5 text-white" />
+                </span>
+                <span className="text-xl font-black">@myfdot</span>
+              </Link>
+            </div>
+
+            <div className="mx-auto mt-6 max-w-6xl">
+              <div className="h-px w-full bg-slate-300" />
+            </div>
+
+            <p className="mx-auto mt-6 max-w-4xl text-xl font-black leading-tight">
+              For information about FDOT programs, safety initiatives,
+              and travel information, please visit <Link href="https://www.fdot.gov" className="underline">www.fdot.gov</Link>
+            </p>
+
+            <div className="mx-auto mt-6 grid w-full max-w-sm grid-cols-3 items-center gap-4">
+              <Link href="https://www.fdot.gov" target="_blank" className="flex justify-center">
+                <Image src="/Web%20Assets/FDOT%20Logo_K.png" alt="FDOT Logo" width={180} height={72} className="h-auto w-24 object-contain" />
+              </Link>
+              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex justify-center">
+                <Image src="/tz_logo_black.png" alt="Target Zero Logo" width={180} height={72} className="h-auto w-24 object-contain" />
+              </Link>
+              <div className="flex justify-center">
+                <Image src="/america250fullcolorlarge.png" alt="America 250 Florida Logo" width={160} height={64} className="h-auto w-14 object-contain" />
+              </div>
+            </div>
+          </div>
         </FadeIn>
       </section>
     </main>

@@ -19,9 +19,9 @@ const XIcon = ({ className }: { className?: string }) => (
 
 export default function TransportationDayPage() {
   return (
-    <main className="min-h-screen bg-white flex flex-col font-sans">
+    <main className="min-h-screen bg-white flex flex-col font-sans gap-2">
 
-      <section className="relative w-full overflow-hidden bg-[#0b3e66]">
+      <section className="relative w-full bg-[#0b3e66] border-b-4 border-red-500">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -41,17 +41,17 @@ export default function TransportationDayPage() {
           {/* Top Content: Title */}
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
             <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase font-oswald tracking-tighter drop-shadow-2xl">
+            <h1 className="text-5xl md:text-6xl lg:text-6xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
               Transportation Day
             </h1>
-            <div className="text-7xl md:text-9xl lg:text-[10rem] font-black text-white font-oswald tracking-tighter drop-shadow-2xl -mt-2 md:-mt-6">
+            <div className="text-7xl md:text-9xl lg:text-[10rem] text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl -mt-2 md:-mt-4">
               2026
             </div>
           </div>
 
           {/* Middle Content: White Bar with Logos */}
-          <div className="bg-white py-6 w-full shadow-2xl z-20">
-            <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-6 px-4 md:grid-cols-3 md:gap-8">
+          <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 rounded-xl">
+            <div className="mx-auto grid w-full grid-cols-1 items-center gap-6 px-4 md:grid-cols-3 md:gap-8">
               <Link href="https://www.fdot.gov" target="_blank" className="flex w-full justify-center">
                 <Image
                   src="/Web%20Assets/FDOT%20Logo_K.png"
@@ -100,7 +100,7 @@ export default function TransportationDayPage() {
       </section>
 
       {/* 4. Pledge Section */}
-      <section className="bg-white py-12 md:py-20">
+      <section className="bg-white py-12 md:py-20 border-t-5 border-b-5 border-[#0b3e66] flex flex-col gap-20">
         <div className="container mx-auto px-4 max-w-5xl text-center space-y-8">
           <FadeIn as="header" direction="up">
             <h2 className="text-4xl md:text-5xl font-black text-[#1c3e6f] uppercase font-oswald tracking-tight">
@@ -126,75 +126,90 @@ export default function TransportationDayPage() {
             </div>
           </FadeIn>
         </div>
+        <div>
+          <FadeIn as="section" direction="up" className="bg-white pb-12 text-center space-y-8">
+            <h3 className="text-2xl md:text-4xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
+              Follow Us On Socials!
+            </h3>
+            <div className="flex justify-center items-center gap-8 md:gap-14">
+              <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
+                  <Instagram className="h-7 w-7 md:h-8 md:w-8 text-white" />
+                </span>
+                <span className="text-2xl md:text-3xl font-bold">@my_fdot</span>
+              </Link>
+              <Link href="https://twitter.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <XIcon className="h-12 w-12 md:h-14 md:w-14" />
+                <span className="text-2xl md:text-3xl font-bold">@myfdot</span>
+              </Link>
+              <Link href="https://facebook.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+                <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#1877f2]">
+                  <Facebook className="h-7 w-7 md:h-8 md:w-8 text-white" />
+                </span>
+                <span className="text-2xl md:text-3xl font-bold">@myfdot</span>
+              </Link>
+            </div>
+
+            {/* Divider Line */}
+            <div className="container mx-auto px-4 max-w-4xl pt-8">
+              <div className="h-px w-full bg-slate-300"></div>
+            </div>
+          </FadeIn>
+          <FadeIn as="footer" direction="up" delayMs={100} className="bg-white pb-12 pt-4">
+            <div className="container mx-auto px-6 text-center space-y-8 max-w-4xl">
+              <p className="text-2xl font-medium text-[#1c3e6f]">
+                For information about FDOT programs, safety initiatives,<br className="hidden md:block" />
+                and travel information, please visit <Link href="https://www.fdot.gov" className="font-bold underline">www.fdot.gov</Link>
+              </p>
+
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
+                <Link href="https://www.fdot.gov" target="_blank">
+                  <Image
+                    src="/Web%20Assets/FDOT%20Logo_K.png"
+                    alt="FDOT Logo"
+                    width={150}
+                    height={60}
+                    className="h-10 md:h-12 w-auto object-contain"
+                  />
+                </Link>
+                <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank">
+                  <Image
+                    src="/tz_logo_black.png"
+                    alt="Target Zero Logo"
+                    width={150}
+                    height={60}
+                    className="h-10 md:h-12 w-auto object-contain"
+                  />
+                </Link>
+                <Image
+                  src="/america250fullcolorlarge.png"
+                  alt="America 250 Florida Logo"
+                  width={150}
+                  height={60}
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
-      {/* 5. Socials Section */}
-      <FadeIn as="section" direction="up" className="bg-white pb-12 text-center space-y-8">
-        <h3 className="text-2xl md:text-3xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
-          Follow Us On Socials!
-        </h3>
-        <div className="flex justify-center items-center gap-8 md:gap-12">
-          <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
-            <span className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
-              <Instagram className="h-5 w-5 md:h-6 md:w-6 text-white" />
-            </span>
-            <span className="text-xl md:text-2xl font-bold">@my_fdot</span>
-          </Link>
-          <Link href="https://twitter.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
-            <XIcon className="h-8 w-8 md:h-10 md:w-10" />
-            <span className="text-xl md:text-2xl font-bold">@myfdot</span>
-          </Link>
-          <Link href="https://facebook.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
-            <span className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-[#1877f2]">
-              <Facebook className="h-5 w-5 md:h-6 md:w-6 text-white" />
-            </span>
-            <span className="text-xl md:text-2xl font-bold">@myfdot</span>
-          </Link>
+      <section className="relative w-full bg-[#0b3e66] border-b-4 border-red-500 h-36">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/view-from-above-of-usa-transportation-infrastructu-2024-12-07-03-39-50-utc-gs.jpg"
+            alt="Highway Background"
+            fill
+            className="object-cover object-bottom"
+            priority
+          />
+          {/* Blue Overlay */}
+          <div className="absolute inset-0 bg-[#132f57]/90"></div>
         </div>
 
-        {/* Divider Line */}
-        <div className="container mx-auto px-4 max-w-4xl pt-8">
-          <div className="h-px w-full bg-slate-300"></div>
-        </div>
-      </FadeIn>
 
-      {/* 6. Footer */}
-      <FadeIn as="footer" direction="up" delayMs={100} className="bg-white pb-12 pt-4">
-        <div className="container mx-auto px-6 text-center space-y-8 max-w-4xl">
-          <p className="text-lg md:text-xl font-medium text-[#1c3e6f]">
-            For information about FDOT programs, safety initiatives,<br className="hidden md:block" />
-            and travel information, please visit <Link href="https://www.fdot.gov" className="font-bold underline">www.fdot.gov</Link>
-          </p>
-
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-            <Link href="https://www.fdot.gov" target="_blank">
-              <Image
-                src="/Web%20Assets/FDOT%20Logo_K.png"
-                alt="FDOT Logo"
-                width={150}
-                height={60}
-                className="h-10 md:h-12 w-auto object-contain"
-              />
-            </Link>
-            <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank">
-              <Image
-                src="/tz_logo_black.png"
-                alt="Target Zero Logo"
-                width={150}
-                height={60}
-                className="h-10 md:h-12 w-auto object-contain"
-              />
-            </Link>
-            <Image
-              src="/america250fullcolorlarge.png"
-              alt="America 250 Florida Logo"
-              width={150}
-              height={60}
-              className="h-10 md:h-12 w-auto object-contain"
-            />
-          </div>
-        </div>
-      </FadeIn>
+      </section>
     </main>
   );
 }
