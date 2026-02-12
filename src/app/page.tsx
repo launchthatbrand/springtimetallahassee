@@ -41,24 +41,24 @@ export default function TransportationDayPage() {
           {/* Top Content: Title */}
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
             <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
-            <h1 className="text-5xl md:text-6xl lg:text-6xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
+            <h1 className="text-3xl md:text-7xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
               Transportation Day
             </h1>
-            <div className="text-7xl md:text-9xl lg:text-[10rem] text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl -mt-2 md:-mt-4">
+            <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
               2026
             </div>
           </div>
 
           {/* Middle Content: White Bar with Logos */}
           <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 rounded-xl">
-            <div className="mx-auto grid w-full grid-cols-1 items-center gap-6 px-4 md:grid-cols-3 md:gap-8">
+            <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
               <Link href="https://www.fdot.gov" target="_blank" className="flex w-full justify-center">
                 <Image
                   src="/Web%20Assets/FDOT%20Logo_K.png"
                   alt="FDOT Logo"
                   width={240}
                   height={96}
-                  className="w-44 md:w-56 h-auto object-contain"
+                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
               <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex w-full justify-center md:justify-self-center">
@@ -67,7 +67,7 @@ export default function TransportationDayPage() {
                   alt="Target Zero Logo"
                   width={240}
                   height={96}
-                  className="w-44 md:w-56 h-auto object-contain"
+                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
               <div className="flex w-full justify-center">
@@ -76,7 +76,7 @@ export default function TransportationDayPage() {
                   alt="America 250 Florida Logo"
                   width={240}
                   height={96}
-                  className="w-18 h-auto object-contain"
+                  className="h-auto w-8 object-contain sm:w-10 md:w-14"
                 />
               </div>
             </div>

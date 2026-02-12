@@ -41,24 +41,24 @@ export default function TransportationDayGothamPage() {
           {/* Top Content: Title */}
           <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pt-12 pb-8">
             <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="h-14 w-auto object-contain" />
-            <h1 className="text-5xl md:text-6xl lg:text-6xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
+            <h1 className="text-3xl md:text-7xl tracking-wide font-black text-white uppercase font-oswald drop-shadow-3xl">
               Transportation Day
             </h1>
-            <div className="text-7xl md:text-9xl lg:text-[10rem] text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl -mt-2 md:-mt-4">
+            <div className="-mt-2 text-7xl md:text-9xl text-shadow-sm font-black text-white font-oswald tracking-tighter drop-shadow-2xl md:-mt-4">
               2026
             </div>
           </div>
 
           {/* Middle Content: White Bar with Logos */}
-          <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 rounded-xl">
-            <div className="mx-auto grid w-full grid-cols-1 items-center gap-6 px-4 md:grid-cols-3 md:gap-8">
+          <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 md:rounded-xl">
+            <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
               <Link href="https://www.fdot.gov" target="_blank" className="flex w-full justify-center">
                 <Image
                   src="/Web%20Assets/FDOT%20Logo_K.png"
                   alt="FDOT Logo"
                   width={240}
                   height={96}
-                  className="w-44 md:w-56 h-auto object-contain"
+                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
               <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex w-full justify-center md:justify-self-center">
@@ -67,7 +67,7 @@ export default function TransportationDayGothamPage() {
                   alt="Target Zero Logo"
                   width={240}
                   height={96}
-                  className="w-44 md:w-56 h-auto object-contain"
+                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
               <div className="flex w-full justify-center">
@@ -76,7 +76,7 @@ export default function TransportationDayGothamPage() {
                   alt="America 250 Florida Logo"
                   width={240}
                   height={96}
-                  className="w-18 h-auto object-contain"
+                  className="h-auto w-8 object-contain sm:w-10 md:w-14"
                 />
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function TransportationDayGothamPage() {
             <h3 className="text-2xl md:text-4xl font-black text-[#1c3e6f] uppercase font-oswald tracking-wide">
               Follow Us On Socials!
             </h3>
-            <div className="flex justify-center items-center gap-8 md:gap-14">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-14">
               <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
                   <Instagram className="h-7 w-7 md:h-8 md:w-8 text-white" />
