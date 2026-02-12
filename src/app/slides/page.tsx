@@ -100,10 +100,10 @@ export default function TransportationDaySlidesPage() {
 
           <FadeIn className="z-20 mx-auto w-full max-w-5xl md:rounded-xl bg-white py-6 shadow-2xl ring-1 ring-blue-500" delayMs={100}>
             <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
-              <Link href="https://www.fdot.gov" target="_blank" className="flex w-full justify-center">
+              <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center">
                 <Image src="/Web%20Assets/FDOT%20Logo_K.png" alt="FDOT Logo" width={240} height={96} className="h-auto w-18 object-contain sm:w-22 md:w-44" />
               </Link>
-              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex w-full justify-center md:justify-self-center">
+              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center md:justify-self-center">
                 <Image src="/tz_logo_black.png" alt="Target Zero Logo" width={240} height={96} className="h-auto w-18 object-contain sm:w-22 md:w-44" />
               </Link>
               <div className="flex w-full justify-center">
@@ -124,7 +124,7 @@ export default function TransportationDaySlidesPage() {
 
               <div className="mx-auto mt-7 w-full max-w-md">
                 <Button asChild className="h-14 w-full rounded-full bg-white text-lg font-black uppercase tracking-wide text-[#10345e] hover:bg-white/90">
-                  <Link href="#checklist">Take the Safety Pledge!</Link>
+                  <Link href="#checklist" target="_blank" rel="noopener noreferrer">Take the Safety Pledge!</Link>
                 </Button>
               </div>
               <ChevronDown className="mx-auto mt-6 h-6 w-6 animate-bounce text-white/80" />
@@ -209,7 +209,7 @@ export default function TransportationDaySlidesPage() {
           </div>
 
           <Button asChild className="h-11 rounded-full bg-[#b91c1c] text-white hover:bg-[#991b1b]">
-            <Link href="#step-two">Continue to Step 2</Link>
+            <Link href="#step-two" target="_blank" rel="noopener noreferrer">Continue to Step 2</Link>
           </Button>
         </FadeIn>
       </section>
@@ -256,10 +256,10 @@ export default function TransportationDaySlidesPage() {
             >
               <div className="rounded-2xl border border-[#d7e3f3] bg-white p-4">
                 <div className="grid grid-cols-3 items-center gap-3">
-                  <Link href="https://www.fdot.gov" target="_blank" className="flex justify-center">
+                  <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                     <Image src="/Web%20Assets/FDOT%20Logo_K.png" alt="FDOT Logo" width={180} height={72} className="h-12 w-auto object-contain" />
                   </Link>
-                  <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex justify-center">
+                  <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                     <Image src="/tz_logo_black.png" alt="Target Zero Logo" width={180} height={72} className="h-12 w-auto object-contain" />
                   </Link>
                   <div className="flex justify-center">
@@ -324,17 +324,17 @@ export default function TransportationDaySlidesPage() {
               Follow Us On Socials!
             </h3>
             <div className="mt-5 flex flex-wrap justify-center items-center gap-4">
-              <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://instagram.com/myfdot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
                   <Instagram className="h-5 w-5 text-white" />
                 </span>
                 <span className="text-xl font-black">@my_fdot</span>
               </Link>
-              <Link href="https://twitter.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://twitter.com/MyFDOT" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <XIcon className="h-8 w-8" />
                 <span className="text-xl font-black">@myfdot</span>
               </Link>
-              <Link href="https://facebook.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://facebook.com/MyFDOT" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877f2]">
                   <Facebook className="h-5 w-5 text-white" />
                 </span>
@@ -348,14 +348,14 @@ export default function TransportationDaySlidesPage() {
 
             <p className="mx-auto mt-6 max-w-4xl text-xl font-black leading-tight">
               For information about FDOT programs, safety initiatives,
-              and travel information, please visit <Link href="https://www.fdot.gov" className="underline">www.fdot.gov</Link>
+              and travel information, please visit <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="underline">www.fdot.gov</Link>
             </p>
 
             <div className="mx-auto mt-6 grid w-full max-w-sm grid-cols-3 items-center gap-4">
-              <Link href="https://www.fdot.gov" target="_blank" className="flex justify-center">
+              <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <Image src="/Web%20Assets/FDOT%20Logo_K.png" alt="FDOT Logo" width={180} height={72} className="h-auto w-24 object-contain" />
               </Link>
-              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex justify-center">
+              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <Image src="/tz_logo_black.png" alt="Target Zero Logo" width={180} height={72} className="h-auto w-24 object-contain" />
               </Link>
               <div className="flex justify-center">

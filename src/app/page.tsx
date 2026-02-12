@@ -52,7 +52,7 @@ export default function TransportationDayPage() {
           {/* Middle Content: White Bar with Logos */}
           <div className="bg-white ring-1 ring-blue-500 py-6 w-full max-w-5xl mx-auto shadow-2xl z-20 rounded-xl">
             <div className="mx-auto grid w-full grid-cols-3 items-center gap-6 px-4 md:gap-8">
-              <Link href="https://www.fdot.gov" target="_blank" className="flex w-full justify-center">
+              <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center">
                 <Image
                   src="/Web%20Assets/FDOT%20Logo_K.png"
                   alt="FDOT Logo"
@@ -61,7 +61,7 @@ export default function TransportationDayPage() {
                   className="h-auto w-18 object-contain sm:w-22 md:w-44"
                 />
               </Link>
-              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" className="flex w-full justify-center md:justify-self-center">
+              <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center md:justify-self-center">
                 <Image
                   src="/tz_logo_black.png"
                   alt="Target Zero Logo"
@@ -132,17 +132,17 @@ export default function TransportationDayPage() {
               Follow Us On Socials!
             </h3>
             <div className="flex justify-center items-center gap-8 md:gap-14">
-              <Link href="https://instagram.com/myfdot" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://instagram.com/myfdot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-[10px] bg-linear-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
                   <Instagram className="h-7 w-7 md:h-8 md:w-8 text-white" />
                 </span>
                 <span className="text-2xl md:text-3xl font-bold">@my_fdot</span>
               </Link>
-              <Link href="https://twitter.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://twitter.com/MyFDOT" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <XIcon className="h-12 w-12 md:h-14 md:w-14" />
                 <span className="text-2xl md:text-3xl font-bold">@myfdot</span>
               </Link>
-              <Link href="https://facebook.com/MyFDOT" target="_blank" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
+              <Link href="https://facebook.com/MyFDOT" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1c3e6f] hover:text-[#d32f2f] transition-colors">
                 <span className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#1877f2]">
                   <Facebook className="h-7 w-7 md:h-8 md:w-8 text-white" />
                 </span>
@@ -159,11 +159,11 @@ export default function TransportationDayPage() {
             <div className="container mx-auto px-6 text-center space-y-8 max-w-4xl">
               <p className="text-2xl font-medium text-[#1c3e6f]">
                 For information about FDOT programs, safety initiatives,<br className="hidden md:block" />
-                and travel information, please visit <Link href="https://www.fdot.gov" className="font-bold underline">www.fdot.gov</Link>
+                and travel information, please visit <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer" className="font-bold underline">www.fdot.gov</Link>
               </p>
 
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                <Link href="https://www.fdot.gov" target="_blank">
+                <Link href="https://www.fdot.gov" target="_blank" rel="noopener noreferrer">
                   <Image
                     src="/Web%20Assets/FDOT%20Logo_K.png"
                     alt="FDOT Logo"
@@ -172,7 +172,7 @@ export default function TransportationDayPage() {
                     className="h-10 md:h-12 w-auto object-contain"
                   />
                 </Link>
-                <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank">
+                <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer">
                   <Image
                     src="/tz_logo_black.png"
                     alt="Target Zero Logo"
