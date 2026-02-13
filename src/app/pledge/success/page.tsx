@@ -24,7 +24,7 @@ export default function SuccessPage() {
         <div className="absolute inset-y-0 right-6 w-3 bg-[#c62828]" />
       </div>
 
-      <div className="absolute inset-8">
+      <div className="absolute inset-9">
         <Image
           src="/view-from-above-of-usa-transportation-infrastructu-2024-12-07-03-39-50-utc-gs.jpg"
           alt="Transportation background"
