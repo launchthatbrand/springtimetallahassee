@@ -23,6 +23,8 @@ type PledgeFormProps = {
 
 export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const router = useRouter();
 
   const {
@@ -38,17 +40,43 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
     },
   });
 
-  const handleSubmitPledge = (values: FormValues) => {
-    console.log("Form Submitted:", values);
-    // Here you would typically send data to an API
-    // await fetch('/api/pledge', { method: 'POST', body: JSON.stringify(values) })
+  const handleSubmitPledge = async (values: FormValues) => {
+    setSubmitError(null);
+    setIsSubmitting(true);
 
-    if (successRedirectPath) {
-      router.push(successRedirectPath);
-      return;
+    try {
+      const response = await fetch("/api/pledge", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          sourcePath:
+            typeof window !== "undefined" ? window.location.pathname : undefined,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(data?.error ?? "Failed to submit pledge.");
+      }
+
+      if (successRedirectPath) {
+        router.push(successRedirectPath);
+        return;
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Failed to submit pledge.";
+      setSubmitError(message);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitted(true);
   };
 
   if (isSubmitted) {
@@ -174,11 +202,15 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         <Button
           type="submit"
           size="lg"
+          disabled={isSubmitting}
           className="h-10 px-8 mr-0 md:mr-10 text-3xl p-8 font-black uppercase tracking-widest bg-[#b91c1c] hover:bg-[#991b1b] text-white rounded-full shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
         >
-          SUBMIT
+          {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
         </Button>
       </div>
+      {submitError && (
+        <p className="z-10 text-sm font-bold text-red-200">{submitError}</p>
+      )}
 
     </form>
   );

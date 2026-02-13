@@ -35,6 +35,8 @@ export default function TransportationDaySlidesPage() {
   const [zipCode, setZipCode] = useState("");
   const [locationError, setLocationError] = useState("");
   const [zipCodeError, setZipCodeError] = useState("");
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const completionPercent = useMemo(() => {
@@ -48,8 +50,9 @@ export default function TransportationDaySlidesPage() {
     );
   };
 
-  const handleLocationSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleLocationSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitError("");
 
     let hasError = false;
     const trimmedLocation = location.trim();
@@ -70,7 +73,38 @@ export default function TransportationDaySlidesPage() {
 
     if (hasError) return;
 
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/pledge", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: pledgeName.trim() || "Pledge Submission",
+          zipCode,
+          location: trimmedLocation,
+          commitments: selectedActions,
+          sourcePath:
+            typeof window !== "undefined" ? window.location.pathname : undefined,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(data?.error || "Failed to submit pledge.");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Failed to submit pledge.";
+      setSubmitError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -323,9 +357,16 @@ export default function TransportationDaySlidesPage() {
                 {zipCodeError && <p className="text-sm font-semibold text-red-600">{zipCodeError}</p>}
               </div>
 
-              <Button type="submit" className="h-11 w-full rounded-full bg-[#b91c1c] text-white hover:bg-[#991b1b]">
-                Complete My Pledge
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="h-11 w-full rounded-full bg-[#b91c1c] text-white hover:bg-[#991b1b]"
+              >
+                {isSubmitting ? "Submitting..." : "Complete My Pledge"}
               </Button>
+              {submitError && (
+                <p className="text-sm font-semibold text-red-600">{submitError}</p>
+              )}
             </form>
           )}
 
