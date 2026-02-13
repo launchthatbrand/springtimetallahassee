@@ -50,7 +50,6 @@ export default function SuccessPage() {
           </h1>
           <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
             Together we are making Florida&apos;s roadways safer for everyone.
-            <br />
             Signing the safety pledge is just the first step.
           </p>
           <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed wrap-break-word">
