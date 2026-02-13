@@ -101,15 +101,15 @@ export async function POST(request: Request) {
     const itemName = trimmedZip ? `${trimmedName} - ${trimmedZip}` : trimmedName;
 
     const boardConfig = getBoardConfig(boardIdRaw);
-    const columnValues: Record<string, string> = {};
+    const columnValues: Record<string, string | { date: string }> = {};
     if (boardConfig.columns.zipCode && trimmedZip) {
       columnValues[boardConfig.columns.zipCode] = trimmedZip;
     }
     if (boardConfig.columns.submittedDate) {
       const today = new Date().toISOString().slice(0, 10);
-      columnValues[boardConfig.columns.submittedDate] = JSON.stringify({
+      columnValues[boardConfig.columns.submittedDate] = {
         date: today,
-      });
+      };
     }
     const columnValuesJson =
       Object.keys(columnValues).length > 0
