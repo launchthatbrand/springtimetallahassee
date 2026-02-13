@@ -94,7 +94,7 @@ export default function TransportationDaySlidesPage() {
         const data = (await response.json().catch(() => null)) as
           | { error?: string }
           | null;
-        throw new Error(data?.error || "Failed to submit pledge.");
+        throw new Error(data?.error ?? "Failed to submit pledge.");
       }
 
       setIsSubmitted(true);
