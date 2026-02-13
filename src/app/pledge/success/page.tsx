@@ -1,17 +1,30 @@
+import { FadeIn } from "~/app/_components/fade-in";
 import Image from "next/image";
 import Link from "next/link";
-import { FadeIn } from "~/app/_components/fade-in";
 
 export default function SuccessPage() {
   return (
     <main className="relative h-screen w-full overflow-hidden bg-white font-gotham">
-      <div className="absolute inset-2 border-4 border-[#0d4f7f] shadow-[0_0_0_2px_rgba(255,255,255,0.2),0_10px_25px_rgba(0,0,0,0.28)]" />
-      <div className="absolute inset-4 border-4 border-[#c62828] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" />
-      <div className="absolute inset-6 border-4 border-white shadow-[0_0_18px_rgba(255,255,255,0.22)]" />
-      <div className="absolute inset-8 border-4 border-[#c62828] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)]" />
-      <div className="absolute inset-10 border-4 border-[#0d4f7f] shadow-[0_8px_20px_rgba(0,0,0,0.22)]" />
+      {/* Layered patriotic frame (side stripes overlap top/bottom) */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* top/bottom stripes */}
+        <div className="absolute inset-x-0 top-0 h-3 bg-[#0d4f7f]" />
+        <div className="absolute inset-x-0 top-3 h-3 bg-white" />
+        <div className="absolute inset-x-0 top-6 h-3 bg-[#c62828]" />
+        <div className="absolute inset-x-0 bottom-0 h-3 bg-[#0d4f7f]" />
+        <div className="absolute inset-x-0 bottom-3 h-3 bg-white" />
+        <div className="absolute inset-x-0 bottom-6 h-3 bg-[#c62828]" />
 
-      <div className="absolute inset-10">
+        {/* full-height side stripes (on top) */}
+        <div className="absolute inset-y-0 left-0 w-3 bg-[#0d4f7f]" />
+        <div className="absolute inset-y-0 left-3 w-3 bg-white" />
+        <div className="absolute inset-y-0 left-6 w-3 bg-[#c62828]" />
+        <div className="absolute inset-y-0 right-0 w-3 bg-[#0d4f7f]" />
+        <div className="absolute inset-y-0 right-3 w-3 bg-white" />
+        <div className="absolute inset-y-0 right-6 w-3 bg-[#c62828]" />
+      </div>
+
+      <div className="absolute inset-8">
         <Image
           src="/view-from-above-of-usa-transportation-infrastructu-2024-12-07-03-39-50-utc-gs.jpg"
           alt="Transportation background"
@@ -50,9 +63,7 @@ export default function SuccessPage() {
             >
               https://www.fdot.gov/agencyresources/target-zero
             </Link>{" "}
-            to learn
-            <br />
-            more on how you can be apart of the Target Zero mission.
+            to learn more on how you can be apart of the Target Zero mission.
           </p>
         </div>
       </FadeIn>

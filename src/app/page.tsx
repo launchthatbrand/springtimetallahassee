@@ -56,7 +56,7 @@ export default function TransportationDayPage() {
                   alt="FDOT Logo"
                   width={240}
                   height={96}
-                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
+                  className="h-auto w-20 object-contain sm:w-24 md:w-48"
                 />
               </Link>
               <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center md:justify-self-center cursor-pointer">
@@ -65,17 +65,17 @@ export default function TransportationDayPage() {
                   alt="Target Zero Logo"
                   width={240}
                   height={96}
-                  className="h-auto w-18 object-contain sm:w-22 md:w-44"
+                  className="h-auto w-20 object-contain sm:w-24 md:w-48"
                 />
               </Link>
-              <Link href="https://www.america250florida.com" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center cursor-pointer">
+              <Link href="https://america250fl.com/" target="_blank" rel="noopener noreferrer" className="flex w-full justify-center cursor-pointer">
                 <div className="flex w-full justify-center">
                   <Image
                     src="/america250fullcolorlarge.png"
                     alt="America 250 Florida Logo"
                     width={240}
                     height={96}
-                    className="h-auto w-8 object-contain sm:w-10 md:w-14"
+                    className="h-auto w-9 object-contain sm:w-11 md:w-16"
                   />
                 </div>
               </Link>
@@ -87,9 +87,9 @@ export default function TransportationDayPage() {
             <div className="max-w-5xl space-y-6">
 
               <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-md">
-                Thank you for participating in <b>America 250 Transportation Day 2026.</b> The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero,
+                Thank you for participating in <strong className="font-black">Transportation Day 2026.</strong> The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero,
                 Florida’s Statewide initiative to reduce the number of transportation-related
-                serious Injuries and fatalities across Florida to ZERO.
+                serious injuries and fatalities across Florida to ZERO.
               </p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function TransportationDayPage() {
                     alt="FDOT Logo"
                     width={150}
                     height={60}
-                    className="h-10 md:h-12 w-auto object-contain"
+                    className="h-11 md:h-14 w-auto object-contain"
                   />
                 </Link>
                 <Link href="https://www.fdot.gov/agencyresources/target-zero" target="_blank" rel="noopener noreferrer" className="flex justify-center">
@@ -195,16 +195,16 @@ export default function TransportationDayPage() {
                     alt="Target Zero Logo"
                     width={150}
                     height={60}
-                    className="h-10 md:h-12 w-auto object-contain"
+                    className="h-11 md:h-14 w-auto object-contain"
                   />
                 </Link>
-                <Link href="https://www.america250florida.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                <Link href="https://america250fl.com/" target="_blank" rel="noopener noreferrer" className="flex justify-center">
                   <Image
                     src="/america250fullcolorlarge.png"
                     alt="America 250 Florida Logo"
                     width={150}
                     height={60}
-                    className="h-10 md:h-12 w-auto object-contain"
+                    className="h-11 md:h-14 w-auto object-contain"
                   />
                 </Link>
               </div>

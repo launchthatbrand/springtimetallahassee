@@ -100,7 +100,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
       onSubmit={handleSubmit(handleSubmitPledge)}
     >
 
-      <div className="text-xl md:text-2xl font-bold text-white z-10 leading-relaxed">
+      <div className="text-2xl md:text-3xl font-bold text-white z-10 leading-relaxed">
         <p className="relative">
           <span>I </span>
           <span className="relative inline-block align-baseline mx-2">
@@ -132,7 +132,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         ].map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 font-bold text-2xl text-white"
+            className="flex items-start gap-3 font-bold text-xl md:text-2xl text-white"
           >
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#ffffff]" />
             <span>{item}</span>
@@ -147,7 +147,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
               htmlFor="zip"
               className="text-lg font-bold text-white whitespace-nowrap"
             >
-              Zip Code:
+              Home Zip Code:
             </label>
             <div className="relative">
               <Input
