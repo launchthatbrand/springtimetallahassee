@@ -132,7 +132,7 @@ export default function TransportationDayPage() {
           </h3>
           <div className="mx-auto flex w-fit flex-col items-center gap-6 md:gap-8">
             <Link
-              href="https://instagram.com/myfdot"
+              href="https://www.instagram.com/my_fdot?igsh=ZXRzZDM3cTQyejJs"
               target="_blank"
               rel="noopener noreferrer"
               className="grid w-50 md:w-64 grid-cols-[3.5rem_1fr] items-center gap-4 text-[#2b2f3a] hover:text-[#d32f2f] transition-colors"

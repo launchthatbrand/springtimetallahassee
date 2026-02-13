@@ -39,27 +39,27 @@ export default function SuccessPage() {
         as="section"
         direction="up"
         durationMs={700}
-        className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white"
+        className="relative z-10 flex h-full items-center justify-center px-5 py-10 text-center text-white sm:px-6"
       >
-        <div className="max-w-6xl space-y-6">
+        <div className="max-w-4xl space-y-4 sm:space-y-6 p-5">
           <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="mx-auto h-14 w-auto object-contain" />
-          <h1 className="text-5xl md:text-7xl font-black uppercase font-oswald leading-tight drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase font-oswald leading-tight drop-shadow-2xl">
             Thank You For
             <br />
             Your Commitment!
           </h1>
-          <p className="text-2xl md:text-4xl font-medium leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
             Together we are making Florida&apos;s roadways safer for everyone.
             <br />
             Signing the safety pledge is just the first step.
           </p>
-          <p className="text-2xl md:text-4xl font-medium leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed wrap-break-word">
             Go to{" "}
             <Link
               href="https://www.fdot.gov/agencyresources/target-zero"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="underline break-all md:break-normal"
             >
               https://www.fdot.gov/agencyresources/target-zero
             </Link>{" "}
