@@ -12,6 +12,7 @@ type PledgePayload = {
 
 type BoardColumnMap = {
   zipCode?: string;
+  submittedDate?: string;
   // Future mappings:
   // name?: string;
   // location?: string;
@@ -26,6 +27,7 @@ type BoardIntegrationConfig = {
 const DEFAULT_BOARD_CONFIG: BoardIntegrationConfig = {
   columns: {
     zipCode: "text_mm0hpvgv",
+    submittedDate: "date4",
   },
 };
 
@@ -102,6 +104,12 @@ export async function POST(request: Request) {
     const columnValues: Record<string, string> = {};
     if (boardConfig.columns.zipCode && trimmedZip) {
       columnValues[boardConfig.columns.zipCode] = trimmedZip;
+    }
+    if (boardConfig.columns.submittedDate) {
+      const today = new Date().toISOString().slice(0, 10);
+      columnValues[boardConfig.columns.submittedDate] = JSON.stringify({
+        date: today,
+      });
     }
     const columnValuesJson =
       Object.keys(columnValues).length > 0
