@@ -5,7 +5,7 @@ import * as z from "zod";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,7 +16,8 @@ const formSchema = z.object({
   participatedInFdotOutreachEvent: z.boolean().default(false),
 });
 
-type FormValues = z.infer<typeof formSchema>;
+type FormInputValues = z.input<typeof formSchema>;
+type FormValues = z.output<typeof formSchema>;
 
 type PledgeFormProps = {
   successRedirectPath?: string;
@@ -33,7 +34,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormValues>({
+  } = useForm<FormInputValues, undefined, FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -42,7 +43,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
     },
   });
 
-  const handleSubmitPledge = async (values: FormValues) => {
+  const handleSubmitPledge: SubmitHandler<FormValues> = async (values) => {
     setSubmitError(null);
     setIsSubmitting(true);
 
