@@ -12,7 +12,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required" }),
-  zipCode: z.string().regex(/^\d{5}$/, { message: "Enter a valid 5-digit zip code" }),
   participatedInFdotOutreachEvent: z.boolean().default(false),
 });
 
@@ -38,7 +37,6 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      zipCode: "",
       participatedInFdotOutreachEvent: false,
     },
   });
@@ -155,18 +153,36 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
 
       <ul className="space-y-3 pl-4 z-10 ">
         {[
-          "Driving with focus every time I get behind the wheel. I will eliminate distractions, by putting my phone on do not disturb recognizing that drive time is my time, staying alert, and giving my full attention to Florida roadways.",
-          "Obeying traffic laws and speeding limits. I will drive at safe speeds on roadways and make responsible decisions that protect myself and others.",
-          "Sharing the road responsibly. I will protect pedestrians, bicyclists, and motorists, by keeping my distance and embracing the space making sure our roadways are safe.",
-          "Never driving under the influence of alcohol or drugs. I will understand that risk of a serious or fatal crash increases for everyone on the road if I drive impaired.",
-          "Planning ahead and allowing enough drive time. I will avoid rushing, recognizing that speeding to save time will have lifelong consequences.",
+          {
+            lead: "Driving with focus every time I get behind the wheel.",
+            rest: "I will eliminate distractions, by putting my phone on do not disturb recognizing that drive time is my time, staying alert, and giving my full attention to Florida roadways.",
+          },
+          {
+            lead: "Obeying traffic laws and speeding limits.",
+            rest: "I will drive at safe speeds on roadways and make responsible decisions that protect myself and others.",
+          },
+          {
+            lead: "Sharing the road responsibly.",
+            rest: "I will protect pedestrians, bicyclists, and motorists, by keeping my distance and embracing the space making sure our roadways are safe.",
+          },
+          {
+            lead: "Never driving under the influence of alcohol or drugs.",
+            rest: "I will understand that risk of a serious or fatal crash increases for everyone on the road if I drive impaired.",
+          },
+          {
+            lead: "Planning ahead and allowing enough drive time.",
+            rest: "I will avoid rushing, recognizing that speeding to save time will have lifelong consequences.",
+          },
         ].map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 font-bold text-xl md:text-2xl text-white"
+            className="flex items-start gap-3 text-xl md:text-2xl text-white"
           >
             <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#ffffff]" />
-            <span>{item}</span>
+            <span>
+              <span className="font-bold">{item.lead}</span>{" "}
+              <span className="font-base">{item.rest}</span>
+            </span>
           </li>
         ))}
       </ul>
@@ -189,37 +205,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         </label>
       </div>
 
-      <div className="flex z-10 w-full flex-col  gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex w-full flex-col items-start gap-1 sm:w-auto">
-          <div className="flex w-full items-center justify-start gap-2 sm:w-auto ml-0 md:ml-10">
-            <label
-              htmlFor="zip"
-              className="text-lg font-bold text-white whitespace-nowrap"
-            >
-              Home Zip Code:
-            </label>
-            <div className="relative">
-              <Input
-                id="zip"
-                type="text"
-                {...register("zipCode")}
-                className={`h-10 w-32 rounded-sm border-none bg-white px-3 text-[#1c3e6f] placeholder:text-slate-500 shadow-inner text-center font-bold tracking-widest ${errors.zipCode ? "ring-2 ring-red-500 bg-red-50" : ""
-                  }`}
-                pattern="[0-9]*"
-                inputMode="numeric"
-                maxLength={5}
-                placeholder="#####"
-                aria-invalid={!!errors.zipCode}
-              />
-            </div>
-          </div>
-          {errors.zipCode && (
-            <span className="text-sm text-red-600 font-bold text-left w-full animate-in slide-in-from-right-2 fade-in">
-              {errors.zipCode.message}
-            </span>
-          )}
-        </div>
-
+      <div className="flex z-10 w-full flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-end">
         <Button
           type="submit"
           size="lg"
