@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required" }),
   zipCode: z.string().regex(/^\d{5}$/, { message: "Enter a valid 5-digit zip code" }),
+  participatedInFdotOutreachEvent: z.boolean().default(false),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -37,6 +38,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
     defaultValues: {
       name: "",
       zipCode: "",
+      participatedInFdotOutreachEvent: false,
     },
   });
 
@@ -134,7 +136,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
           <span className="relative inline-block align-baseline mx-2">
             <Input
               {...register("name")}
-              className={`h-9 w-52 sm:w-64 md:w-72 border-2 rounded-md bg-white px-3 py-1 text-[#1c3e6f] placeholder:text-slate-500 shadow-sm focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
+              className={`h-9 w-52 sm:w-64 md:w-72 border-2 rounded-md bg-white px-3 py-1 text-lg! text-[#1c3e6f] placeholder:text-slate-500 shadow-sm focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
                 }`}
               placeholder="First and Last Name"
               aria-label="Name"
@@ -146,17 +148,17 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
               </span>
             )}
           </span>
-          <span>pledge to practice safer behaviors every time I travel by:</span>
+          <span>pledge to Target Zero by:</span>
         </p>
       </div>
 
       <ul className="space-y-3 pl-4 z-10 ">
         {[
-          "Staying alert and focused on the road",
-          "Following traffic laws and posted speed limits",
-          "Eliminating all distractions while walking, biking, or driving",
-          "Never driving impaired",
-          "Making smart decisions everytime I get behind a wheel",
+          "Driving with focus every time I get behind the wheel. I will eliminate distractions, by putting my phone on do not disturb recognizing that drive time is my time, staying alert, and giving my full attention to Florida roadways.",
+          "Obeying traffic laws and speeding limits. I will drive at safe speeds on roadways and make responsible decisions that protect myself and others.",
+          "Sharing the road responsibly. I will protect pedestrians, bicyclists, and motorists, by keeping my distance and embracing the space making sure our roadways are safe.",
+          "Never driving under the influence of alcohol or drugs. I will understand that risk of a serious or fatal crash increases for everyone on the road if I drive impaired.",
+          "Planning ahead and allowing enough drive time. I will avoid rushing, recognizing that speeding to save time will have lifelong consequences.",
         ].map((item, i) => (
           <li
             key={i}
@@ -167,6 +169,24 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
           </li>
         ))}
       </ul>
+
+      <div className="z-10 flex items-start rounded-lg border-2 border-dashed border-white/80 bg-white/5 px-4 py-3">
+        <label
+          htmlFor="participatedInFdotOutreachEvent"
+          className="flex cursor-pointer items-start gap-3 text-white"
+        >
+          <input
+            id="participatedInFdotOutreachEvent"
+            type="checkbox"
+            {...register("participatedInFdotOutreachEvent")}
+            className="mt-1 h-5 w-5 rounded border-2 border-white bg-white accent-[#b91c1c]"
+            aria-label="I Participated in a Florida Department of Transportation Outreach Event"
+          />
+          <span className="text-xl md:text-2xl font-bold leading-relaxed">
+            I Participated in a Florida Department of Transportation Outreach Event
+          </span>
+        </label>
+      </div>
 
       <div className="flex z-10 w-full flex-col  gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex w-full flex-col items-start gap-1 sm:w-auto">

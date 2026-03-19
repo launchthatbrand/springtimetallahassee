@@ -8,11 +8,13 @@ type PledgePayload = {
   location?: string;
   commitments?: string[];
   sourcePath?: string;
+  participatedInFdotOutreachEvent?: boolean;
 };
 
 type BoardColumnMap = {
   zipCode?: string;
   submittedDate?: string;
+  participatedInFdotOutreachEvent?: string;
   // Future mappings:
   // name?: string;
   // location?: string;
@@ -28,6 +30,7 @@ const DEFAULT_BOARD_CONFIG: BoardIntegrationConfig = {
   columns: {
     zipCode: "text_mm0hpvgv",
     submittedDate: "date4",
+    participatedInFdotOutreachEvent: "boolean_mm1kk9a2",
   },
 };
 
@@ -101,7 +104,7 @@ export async function POST(request: Request) {
     const itemName = trimmedZip ? `${trimmedName} - ${trimmedZip}` : trimmedName;
 
     const boardConfig = getBoardConfig(boardIdRaw);
-    const columnValues: Record<string, string | { date: string }> = {};
+    const columnValues: Record<string, string | boolean | { date: string }> = {};
     if (boardConfig.columns.zipCode && trimmedZip) {
       columnValues[boardConfig.columns.zipCode] = trimmedZip;
     }
@@ -110,6 +113,11 @@ export async function POST(request: Request) {
       columnValues[boardConfig.columns.submittedDate] = {
         date: today,
       };
+    }
+    if (boardConfig.columns.participatedInFdotOutreachEvent) {
+      columnValues[boardConfig.columns.participatedInFdotOutreachEvent] = Boolean(
+        payload.participatedInFdotOutreachEvent,
+      );
     }
     const columnValuesJson =
       Object.keys(columnValues).length > 0

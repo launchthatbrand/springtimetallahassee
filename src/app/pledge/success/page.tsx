@@ -49,8 +49,10 @@ export default function SuccessPage() {
             Your Commitment!
           </h1>
           <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
-            Together we are making Florida&apos;s roadways safer for everyone.
-            Signing the safety pledge is just the first step.
+            Congratulations on taking your first step towards the Target Zero mission!
+          </p>
+          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
+            Together we are making Florida&apos;s roadways safer for everyone. Signing the Target Zero pledge is just the first step.
           </p>
           <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed wrap-break-word">
             Go to{" "}
@@ -62,7 +64,7 @@ export default function SuccessPage() {
             >
               https://www.fdot.gov/agencyresources/target-zero
             </Link>{" "}
-            to learn more on how you can be apart of the Target Zero mission.
+            to learn more on how you better our Florida roadways one drive at a time.
           </p>
         </div>
       </FadeIn>

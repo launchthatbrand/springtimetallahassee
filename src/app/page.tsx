@@ -87,9 +87,10 @@ export default function TransportationDayPage() {
             <div className="max-w-5xl space-y-6">
 
               <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-md">
-                Thank you for participating in <strong className="font-black">Transportation Day 2026.</strong> The Florida Department of Transportation appreciates your commitment to transportation safety and Target Zero,
-                Florida’s Statewide initiative to reduce the number of transportation-related
-                serious injuries and fatalities across Florida to ZERO.
+                Thank you for partnering with the Florida Department of Transportation (FDOT) in support of Target Zero, a statewide initiative to reduce the number of transportation-related serious injuries and fatalities across Florida to ZERO.
+              </p>
+              <p className="text-xl md:text-2xl font-medium leading-relaxed text-white/90 drop-shadow-md">
+                Every action we take moves us closer to safer roads for everyone. Sign the pledge to join the Target Zero mission. Together we can reach Target Zero!
               </p>
             </div>
           </div>
