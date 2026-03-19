@@ -98,7 +98,7 @@ export default function TransportationDayPage() {
       </section>
 
       {/* 4. Pledge Section */}
-      <section className="py-12 md:py-20 border-t-8 bg-[#09426e] border-b-8 border-[#b42116] flex flex-col gap-20">
+      <section className="py-12 md:py-20 border-t-8 bg-white border-b-8 border-[#b42116] flex flex-col gap-20">
         <div className="container mx-auto px-4 max-w-5xl text-center space-y-8">
           <FadeIn direction="up" delayMs={100}>
             {/* Pledge Card */}
@@ -111,14 +111,14 @@ export default function TransportationDayPage() {
               /> */}
             {/* <div className="absolute inset-0 bg-white/80" /> */}
 
-            <div className="relative z-10 text-center">
-              <h2 className="text-center text-4xl md:text-7xl font-black text-white uppercase font-oswald tracking-tight">
+            <div className="relative z-10 text-center pb-6 md:pb-8">
+              <h2 className="text-center text-4xl md:text-7xl font-black text-[#09426e] uppercase font-oswald tracking-tight">
                 Take the Safety Pledge!
               </h2>
             </div>
 
             {/* Form */}
-            <div className="relative z-10 w-full md:mx-auto p-8 pt-6 md:p-12 md:pt-8 text-left flex flex-col justify-center">
+            <div className="relative z-10 w-full md:mx-auto rounded-2xl border border-slate-200 bg-white p-8 pt-6 shadow-xl md:p-12 md:pt-8 text-left flex flex-col justify-center">
               <PledgeForm successRedirectPath="/pledge/success" />
             </div>
 

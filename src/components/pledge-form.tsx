@@ -129,13 +129,13 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
       onSubmit={handleSubmit(handleSubmitPledge)}
     >
 
-      <div className="text-2xl md:text-3xl font-bold text-white z-10 leading-relaxed">
+      <div className="z-10 text-2xl font-bold leading-relaxed text-black md:text-3xl">
         <p className="relative">
           <span>I </span>
           <span className="relative inline-block align-baseline mx-2">
             <Input
               {...register("name")}
-              className={`h-9 w-52 sm:w-64 md:w-72 border-2 rounded-md bg-white px-3 py-1 text-lg! text-[#1c3e6f] placeholder:text-slate-500 shadow-sm focus-visible:ring-0 focus-visible:border-b-[#d32f2f] transition-colors ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
+              className={`h-9 w-52 rounded-md border-2 bg-white px-3 py-1 text-lg text-[#1c3e6f] placeholder:text-slate-500 shadow-sm transition-colors focus-visible:border-b-[#d32f2f] focus-visible:ring-0 sm:w-64 md:w-72 ${errors.name ? "border-red-500 bg-red-50" : "border-[#1c3e6f]"
                 }`}
               placeholder="First and Last Name"
               aria-label="Name"
@@ -151,7 +151,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         </p>
       </div>
 
-      <ul className="space-y-3 pl-4 z-10 ">
+      <ul className="z-10 space-y-3 pl-4">
         {[
           {
             lead: "Driving with focus every time I get behind the wheel.",
@@ -176,27 +176,27 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         ].map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 text-xl md:text-2xl text-white"
+            className="flex items-start gap-3 text-xl text-black md:text-2xl"
           >
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#ffffff]" />
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black" />
             <span>
               <span className="font-bold">{item.lead}</span>{" "}
-              <span className="font-base">{item.rest}</span>
+              <span className="font-normal">{item.rest}</span>
             </span>
           </li>
         ))}
       </ul>
 
-      <div className="z-10 flex items-start rounded-lg border-2 border-dashed border-white/80 bg-white/5 px-4 py-3">
+      <div className="z-10 flex items-start rounded-lg border-2 border-dashed border-[#09426e]/40 bg-[#09426e]/5 px-4 py-3">
         <label
           htmlFor="participatedInFdotOutreachEvent"
-          className="flex cursor-pointer items-start gap-3 text-white"
+          className="flex cursor-pointer items-start gap-3 text-black"
         >
           <input
             id="participatedInFdotOutreachEvent"
             type="checkbox"
             {...register("participatedInFdotOutreachEvent")}
-            className="mt-1 h-5 w-5 rounded border-2 border-white bg-white accent-[#b91c1c]"
+            className="mt-1 h-5 w-5 rounded border-2 border-[#09426e] bg-white accent-[#b91c1c]"
             aria-label="I Participated in a Florida Department of Transportation Outreach Event"
           />
           <span className="text-xl md:text-2xl font-bold leading-relaxed">
@@ -216,7 +216,7 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
         </Button>
       </div>
       {submitError && (
-        <p className="z-10 text-sm font-bold text-red-200">{submitError}</p>
+        <p className="z-10 text-sm font-bold text-red-600">{submitError}</p>
       )}
 
     </form>
