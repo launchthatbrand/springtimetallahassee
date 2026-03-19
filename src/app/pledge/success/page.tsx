@@ -43,18 +43,18 @@ export default function SuccessPage() {
       >
         <div className="max-w-4xl space-y-4 sm:space-y-6 p-5">
           <Image src="/Star Trio.png" alt="Star Trio" width={100} height={100} className="mx-auto h-14 w-auto object-contain" />
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase font-oswald leading-tight drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase font-oswald leading-tight drop-shadow-2xl">
             Thank You For
             <br />
             Your Commitment!
           </h1>
-          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-2xl font-medium leading-relaxed">
             Congratulations on taking your first step towards the Target Zero mission!
           </p>
-          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-2xl font-medium leading-relaxed">
             Together we are making Florida&apos;s roadways safer for everyone. Signing the Target Zero pledge is just the first step.
           </p>
-          <p className="text-xl sm:text-2xl md:text-4xl font-medium leading-relaxed wrap-break-word">
+          <p className="text-xl sm:text-2xl md:text-2xl font-medium leading-relaxed wrap-break-word">
             Go to{" "}
             <Link
               href="https://www.fdot.gov/agencyresources/target-zero"

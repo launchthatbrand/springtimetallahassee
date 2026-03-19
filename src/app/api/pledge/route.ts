@@ -104,7 +104,10 @@ export async function POST(request: Request) {
     const itemName = trimmedZip ? `${trimmedName} - ${trimmedZip}` : trimmedName;
 
     const boardConfig = getBoardConfig(boardIdRaw);
-    const columnValues: Record<string, string | boolean | { date: string }> = {};
+    const columnValues: Record<
+      string,
+      string | { date: string } | { checked: "true" | "false" }
+    > = {};
     if (boardConfig.columns.zipCode && trimmedZip) {
       columnValues[boardConfig.columns.zipCode] = trimmedZip;
     }
@@ -115,9 +118,9 @@ export async function POST(request: Request) {
       };
     }
     if (boardConfig.columns.participatedInFdotOutreachEvent) {
-      columnValues[boardConfig.columns.participatedInFdotOutreachEvent] = Boolean(
-        payload.participatedInFdotOutreachEvent,
-      );
+      columnValues[boardConfig.columns.participatedInFdotOutreachEvent] = {
+        checked: payload.participatedInFdotOutreachEvent ? "true" : "false",
+      };
     }
     const columnValuesJson =
       Object.keys(columnValues).length > 0
