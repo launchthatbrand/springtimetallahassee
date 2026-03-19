@@ -5,27 +5,27 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "Transportation Day 2026",
-    template: "%s | Target Zero",
+    default: "Springtime Tallahassee",
+    template: "%s | Springtime Tallahassee",
   },
   description:
-    "Transportation Day 2026",
-  applicationName: "Transportation Day 2026",
+    "Springtime Tallahassee",
+  applicationName: "Springtime Tallahassee",
   icons: [{ rel: "icon", url: "/Web Assets/FDOT Logo_K.png" }],
   openGraph: {
-    title: "Transportation Day 2026",
-    description: "Transportation Day 2026",
+    title: "Springtime Tallahassee",
+    description: "Springtime Tallahassee",
     images: [
       {
         url: "/TZ%20Transportation%20Day.jpg",
-        alt: "Transportation Day 2026",
+        alt: "Springtime Tallahassee",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Transportation Day 2026",
-    description: "Transportation Day 2026",
+    title: "Springtime Tallahassee",
+    description: "Springtime Tallahassee",
     images: ["/TZ%20Transportation%20Day.jpg"],
   },
 };
