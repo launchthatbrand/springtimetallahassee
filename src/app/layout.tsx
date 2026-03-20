@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Springtime Tallahassee",
     images: [
       {
-        url: "/TZ%20Transportation%20Day.jpg",
+        url: "/springtime_tallahassee_og_image.jpg",
         alt: "Springtime Tallahassee",
       },
     ],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Springtime Tallahassee",
     description: "Springtime Tallahassee",
-    images: ["/TZ%20Transportation%20Day.jpg"],
+    images: ["/springtime_tallahassee_og_image.jpg"],
   },
 };
 
