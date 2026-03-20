@@ -155,12 +155,6 @@ export async function POST(request: Request) {
 
     const details = [
       `Name: ${trimmedName}`,
-      `Zip Code: ${trimmedZip ?? "N/A"}`,
-      `Location: ${payload.location?.trim() ?? "N/A"}`,
-      `Source Path: ${payload.sourcePath ?? "N/A"}`,
-      payload.commitments?.length
-        ? `Commitments: ${payload.commitments.join(" | ")}`
-        : "Commitments: N/A",
       `Submitted At: ${new Date().toISOString()}`,
     ].join("\n");
 

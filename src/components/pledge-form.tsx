@@ -12,7 +12,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required" }),
-  participatedInFdotOutreachEvent: z.boolean().default(false),
+  participatedInFdotOutreachEvent: z
+    .boolean()
+    .refine((value) => value, {
+      message: "You must confirm event participation before submitting.",
+    }),
 });
 
 type FormInputValues = z.input<typeof formSchema>;
@@ -204,6 +208,11 @@ export function PledgeForm({ successRedirectPath }: PledgeFormProps) {
           </span>
         </label>
       </div>
+      {errors.participatedInFdotOutreachEvent && (
+        <p className="z-10 text-sm font-bold text-red-600">
+          {errors.participatedInFdotOutreachEvent.message}
+        </p>
+      )}
 
       <div className="flex z-10 w-full flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-end">
         <Button
